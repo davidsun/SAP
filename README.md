@@ -41,7 +41,10 @@ Options for SAP Mapper
 
 * -f FastMap
 
-
+SAP cuts read into small pieces.
+Usually, one SNP between small piece and reference can be tolerated.
+When FastMap is enabled, any SNP between small piece and reference will not be tolerated, 
+which can greatly accelerate the mapping process, and reduce the coverage of mapping.
 
 Options for SAP Predictor
 -----
