@@ -1,5 +1,6 @@
 bin/
 data/
+*.swp
 *.o
 *.sublime-project
 *.sublime-workspace

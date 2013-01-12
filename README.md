@@ -39,6 +39,10 @@ The file VARIATION.txt contains the final result.
 Options for SAP Mapper
 -----
 
+* -f FastMap
+
+
+
 Options for SAP Predictor
 -----
 
