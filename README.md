@@ -93,5 +93,29 @@ Options for SAP Mapper
 Options for SAP Predictor
 -----
 
+*   -i FILE_NAME  
+    Input file name (the output of SAP Mapper).
+
+
+*   -r FILE_NAME  
+    Reference file name (the file which contains reference, should be in FDA format).
+
+
+*   -o FILE_NAME  
+    Output file name.
+
+
+*   -Q QUALITY  
+    Minimum quality to validate a read.
+
+
+*   -m READ_DEPTH  
+    Mimimum depth of reads to validate a insertion/deletion/SNP.  
+    Here the depth of reads means the number of reads that covers the location of insertion/deletion/SNP.
+
+
+*   -h  
+    Help.
+
 Options for SAP SNPFilter
 -----
