@@ -373,8 +373,10 @@ int processDna(ExonList *list, Hash *hash, const char *inputFileName, const char
 	IO::BufferedFileReader *reader = IO::BufferedFileReader::newBufferedFileReader(inputFileName);
 	IO::BufferedFileWriter *writer = IO::BufferedFileWriter::newBufferedFileWriter(outputFileName);
 	if (!reader -> isOpen()){
+		delete writer;
 		delete reader;
-		return 1;
+		fprintf(stderr, "Cannot open input file: %s.\n", inputFileName);
+		exit(1);
 	}
 	
 	pthread_t *threads = (pthread_t *)malloc(sizeof(pthread_t) * threadCount);

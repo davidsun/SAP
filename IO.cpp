@@ -209,6 +209,8 @@ IO::BufferedFileReader::BufferedFileReader(const char *fileName) :
 			_currentBuffer = _lastBuffer = new Buffer(_f);
 			_bufferCount ++;
 			if (_lastBuffer -> size() < READ_BUFFER_SIZE) _isEOF = 1;
+		}  else {
+			this->_isEOF = true;
 		}
 }
 
@@ -294,10 +296,12 @@ IO::BufferedFileWriter::Buffer::~Buffer(){
 IO::BufferedFileWriter *IO::BufferedFileWriter::newBufferedFileWriter(const char *fileName){
 	BufferedFileWriter *ret = new BufferedFileWriter(fileName);
 	
-	pthread_attr_t attr;
-	pthread_attr_init(&attr);
-	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
-	pthread_create(&ret -> _writingThread, &attr, writingProcess, (void *)ret);
+	if (ret){
+		pthread_attr_t attr;
+		pthread_attr_init(&attr);
+		pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+		pthread_create(&ret -> _writingThread, &attr, writingProcess, (void *)ret);
+	}
 	return ret;
 }
 
