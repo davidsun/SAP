@@ -41,9 +41,9 @@ Options for SAP Mapper
 
 *   -f  
     FastMap mode.  
-    SAP cuts read into small pieces.
-    Usually, one SNP between small piece and reference can be tolerated.
-    When FastMap (-f) is enabled, any SNP between small piece and reference will not be tolerated,
+    Every read is cut into small pieces, which are mapped onto the reference.
+    Usually, one gap between small piece and reference can be tolerated.
+    When FastMap (-f) is enabled, any gap between small piece and reference will NOT be tolerated,
     which can greatly accelerate the mapping process, and reduce the coverage of mapping.
 
 
@@ -53,14 +53,14 @@ Options for SAP Mapper
 
 *   -H HASH_SIZE  
     The size of hash table, which can be any number between 20 and 30.  
-    The actual size of hash table will be 2^HASH_SIZE.
-    Larger size of hash table will lead to faster mapping when reference is large.
+    The actual size of hash table is 2^HASH_SIZE.
+    Larger size of hash table leads to faster mapping when the size of reference is large.
 
 
 *   -C CUT_COUNT  
     The number of pieces that every read will be cut into.  
-    Each piece will be looked up in the hash table.
-    Usually, larger number of pieces will lead to higher coverage of mapping.
+    Each piece of read is looked up in the hash table.
+    Usually, larger number of pieces leads to higher coverage of mapping.
 
 
 *   -G GAP_RATIO  
@@ -83,7 +83,7 @@ Options for SAP Mapper
 
 *   -p PIECE_SIZE  
     The size of small pieces when mapping.  
-    Smaller size of pieces will lead to slower mapping and higher coverage.
+    Smaller size of pieces leads to slower mapping and higher coverage.
 
 
 *   -h  
@@ -138,7 +138,7 @@ Options for SAP SNPFilter
 
 *   -s SCORE  
     Maximum score to call a SNP.  
-    For the output of SAP Predictor, higher score means lower possiblity that a SAP happens on the position.
+    For the output of SAP Predictor, higher score means lower possiblity that a SAP happens.
 
 
 *   -h  
