@@ -44,7 +44,7 @@ double LHet[256][256];
 double KM1[256], KM2[256];
 
 std::pair <double, double> LogP(double q){
-	double val = pow10(- q / 10.0);
+	double val = pow(10, - q / 10.0);
 	return std::make_pair(log(1.0 - val), log(val));
 }
 

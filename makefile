@@ -26,6 +26,7 @@ SNPFilterO = SNPFilter.o
 IndelFilterO = IndelFilter.o
 
 main:   ${MapperO} ${FastqToFDQO} ${FastaToFDAO} ${PredictorO} ${SNPFilterO} ${IndelFilterO}
+	mkdir -p bin/${MACHTYPE}/
 	${CPP} ${COPT} ${CFLAGS} -o ${BINDIR}/Mapper ${MapperO} $(MYLIBS) $L
 	${STRIP} ${BINDIR}/Mapper
 	${CPP} ${COPT} ${CFLAGS} -o ${BINDIR}/FastqToFDQ ${FastqToFDQO} $(MYLIBS) $L
