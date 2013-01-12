@@ -15,8 +15,8 @@ Compile
 Basic usage
 -----
 
-Suppose your reference file name is REFERENCE_INPUT_FILE_NAME, 
-and INPUT_FILE_NAME contains the reads that you want to map.
+Suppose the reference file name is REFERENCE_INPUT_FILE_NAME (for example, human gene), 
+and INPUT_FILE_NAME contains the reads that needed to be mapped on to the reference.
 
 STEP 1: Transform Fasta format into FDA format.
 
