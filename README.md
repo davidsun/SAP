@@ -119,3 +119,27 @@ Options for SAP Predictor
 
 Options for SAP SNPFilter
 -----
+
+*   -i FILE_NAME  
+    Input file name (the output of SAP Predictor).
+
+
+*   -o FILE_NAME  
+    Output file name.
+
+
+*   -m READ_DEPTH  
+    Minimum depth of reads to call a SNP.
+
+
+*   -M READ_DEPTH  
+    Maximum depth of reads to call a SNP.
+
+
+*   -s SCORE  
+    Maximum score to call a SNP.  
+    For the output of SAP Predictor, higher score means lower possiblity that a SAP happens on the position.
+
+
+*   -h  
+    Help.
