@@ -123,7 +123,7 @@ class MatchExon : public Exon{
 		void init();
 };
 
-class ExonList{
+class ExonList {
 	public:
 		class iterator{
 			friend class ExonList;
@@ -147,8 +147,8 @@ class ExonList{
 		
 		iterator begin();
 		iterator exonById(int id);
-		void readExon(const char *fileName);
-		void readMatchExon(const char *fileName);
+		int readExon(const char *fileName);
+		int readMatchExon(const char *fileName);
 		iterator removeExon(const iterator &it); 
 		int totalExonSize() const;
 		

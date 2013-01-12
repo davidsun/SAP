@@ -348,9 +348,9 @@ Exon* ExonList::iterator::exon() const{
 	return _it -> second;
 }
 
-void ExonList::readExon(const char* fileName){
+int ExonList::readExon(const char* fileName){
 	IO::BufferedFileReader *reader = IO::BufferedFileReader::newBufferedFileReader(fileName);
-	if (!reader -> isOpen()) return;
+	if (!reader -> isOpen()) return -1;
 	DynamicArray <char> bufferName(100), bufferDna(1000);
 	int sizeName, sizeDna;
 	while ((sizeName = reader -> readLine(bufferName) >= 0) && (sizeDna = reader -> readLine(bufferDna)) >= 0){
@@ -360,11 +360,12 @@ void ExonList::readExon(const char* fileName){
 		_totalExonSize += exon -> size();
 	}
 	delete reader;
+	return 0;
 }
 
-void ExonList::readMatchExon(const char* fileName){
+int ExonList::readMatchExon(const char* fileName){
 	IO::BufferedFileReader *reader = IO::BufferedFileReader::newBufferedFileReader(fileName);
-	if (!reader -> isOpen()) return;
+	if (!reader -> isOpen()) return -1;
 	DynamicArray <char> bufferName(100), bufferDna(1000);
 	int sizeName, sizeDna;
 	while ((sizeName = reader -> readLine(bufferName) >= 0) && (sizeDna = reader -> readLine(bufferDna)) >= 0){
@@ -374,6 +375,7 @@ void ExonList::readMatchExon(const char* fileName){
 		_totalExonSize += exon -> size();
 	}
 	delete reader;
+	return 0;
 }
 
 ExonList::iterator ExonList::removeExon(const ExonList::iterator &it){

@@ -374,7 +374,7 @@ int processDna(ExonList *list, Hash *hash, const char *inputFileName, const char
 	IO::BufferedFileWriter *writer = IO::BufferedFileWriter::newBufferedFileWriter(outputFileName);
 	if (!reader -> isOpen()){
 		delete reader;
-		return 0;
+		return 1;
 	}
 	
 	pthread_t *threads = (pthread_t *)malloc(sizeof(pthread_t) * threadCount);
@@ -507,7 +507,10 @@ int main(int argc, char **argv){
 	}
 	
 	ExonList *exonList = new ExonList;
-	exonList -> readExon(parameter.referenceFileName.c_str());
+	if (exonList -> readExon(parameter.referenceFileName.c_str())){
+		fprintf(stderr, "Cannot open reference file: %s.\n", parameter.referenceFileName.c_str());
+		exit(1);
+	}
 	BufferedBinaryHash *hashExon = new BufferedBinaryHash(exonList -> totalExonSize(), parameter.hashBinarySize);
 	for (ExonList::iterator it = exonList -> begin(); !it.isEnd(); it ++){
 		Dna *dna = it.exon();
