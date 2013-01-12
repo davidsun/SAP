@@ -15,6 +15,9 @@ Compile
 Basic usage
 -----
 
+Suppose your reference file name is REFERENCE_INPUT_FILE_NAME, 
+and INPUT_FILE_NAME contains the reads that you want to map.
+
 STEP 1: Transform Fasta format into FDA format.
 
     FastaToFDA REFERENCE_INPUT_FILE_NAME > REFERENCE_FDA.fda
