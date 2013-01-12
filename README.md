@@ -46,36 +46,49 @@ Options for SAP Mapper
     When FastMap (-f) is enabled, any SNP between small piece and reference will not be tolerated,
     which can greatly accelerate the mapping process, and reduce the coverage of mapping.
 
+
 *   -t THREAD_COUNT  
     The number of threads when mapping.
-   
+
+
 *   -H HASH_SIZE  
     The size of hash table, which can be any number between 20 and 30.  
     The actual size of hash table will be 2^HASH_SIZE.
     Larger size of hash table will lead to faster mapping when reference is large.
+
 
 *   -C CUT_COUNT  
     The number of pieces that every read will be cut into.  
     Each piece will be looked up in the hash table.
     Usually, larger number of pieces will lead to higher coverage of mapping.
 
+
 *   -G GAP_RATIO  
     Maximum gap ratio.  
     The maximum percentage of gaps in a single read that can be tolerated by SAP Mapper.
     The gap ratio is defined as MaxGapLength/ReadLength.
 
+
 *   -i FILE_NAME  
     Input file name (the file which contains reads, should be in FDQ format).
+
 
 *   -r FILE_NAME  
     Reference file name (the file which contains reference, should be in FDA format).
 
+
 *   -o FILE_NAME  
     Output file name.
+
 
 *   -p PIECE_SIZE  
     The size of small pieces when mapping.  
     Smaller size of pieces will lead to slower mapping and higher coverage.
+
+
+*   -h  
+    Help.
+
 
 Options for SAP Predictor
 -----
