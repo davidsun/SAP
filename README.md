@@ -41,25 +41,28 @@ Options for SAP Mapper
 
 *   -f 
 
+    FastMap mode.
+
     SAP cuts read into small pieces.
     Usually, one SNP between small piece and reference can be tolerated.
     When FastMap (-f) is enabled, any SNP between small piece and reference will not be tolerated, 
     which can greatly accelerate the mapping process, and reduce the coverage of mapping.
 
 *   -t THREAD_COUNT
-
+    
     The number of threads when mapping.
    
 *   -H HASH_SIZE
     
-    The size of hash table.
-    Can be any number between 20 and 30.
+    The size of hash table, which can be any number between 20 and 30.
+    
     The actual size of hash table will be 2^HASH_SIZE.
     Larger size of hash table will lead to faster mapping when reference is large.
 
 *   -C CUT_COUNT
 
     The number of pieces that every read will be cut into.
+    
     Each piece will be looked up in the hash table.
     Usually, larger number of pieces will lead to higher coverage of mapping.
 
