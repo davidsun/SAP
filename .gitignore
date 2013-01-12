@@ -1,4 +1,5 @@
 bin/
+data/
 *.o
 *.sublime-project
 *.sublime-workspace
